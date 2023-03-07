@@ -1,0 +1,10 @@
+        body {
+            background: black;
+            font-family: 'Source Code Pro', monospace;
+            cursor: default;
+            color: white;
+        }
+        ::selection { 
+            background: white;
+            color: black;
+        }
