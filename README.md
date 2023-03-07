@@ -7,7 +7,7 @@ JLI is a Web Framework for developing terminal web apps
 It's simple, just paste in the script tag.
 
 ```html
-<script src="bit.ly/get-jli"></script>
+<script src="https://bit.ly/get-jli"></script>
 ```
 
 ## Usage
