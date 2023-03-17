@@ -1,5 +1,10 @@
-        document.write("<link rel='stylesheet' href='https://raw.githubusercontent.com/skzidev/JLI/main/terminal.css'><p id='in'></p>");
+        document.write("<p id='in'></p>");
         document.close();
+
+        document.body.style.background = "black";
+        document.body.style.color = "white";
+        document.body.style.fontFamily = 'Source Code Pro, monospace';
+
         let text = "";
         const inputText = document.getElementById('in');
         
@@ -14,8 +19,12 @@
                 document.body.insertBefore(textElem, inputText);
                 text = "";
                 inputText.innerText = "";
-                window.cmd.callback(textElem.innerText);
-                //ParseCommand(text);
+                if(window.jli.requestingInput){
+                    window.jli.promiseResolve(textElem.innerText);
+                }
+                else {
+                    window.jli.callback(textElem.innerText);
+                }
             }
             else {
                 if(e.key.length == 1) text += e.key;
@@ -31,6 +40,7 @@
         class CommandLine {
             constructor(document){
                 this.callback = (cmd) => {};
+                this.requestingInput = false;
             }
             setCommandCallback(callback){
                 this.callback = callback;
@@ -38,7 +48,14 @@
             showMessage(msg){
                 let txt = document.createElement('p');
                 txt.innerText = msg;
-                document.body.insertBefore(msg, inputText);
+                document.body.insertBefore(txt, inputText);
+            }
+            getInput(){
+                this.requestingInput = true;
+                let inputPromise = new Promise((resolve, reject) => {
+                    this.promiseResolve = resolve;
+                });
+                return inputPromise;
             }
         }
         window.jli = new CommandLine(document);
