@@ -7,7 +7,7 @@ JLI is a Web Framework for developing terminal web apps
 It's simple, just paste in the script tag.
 
 ```html
-<script src="https://bit.ly/get-jli"></script>
+<script src="https://cdn.jsdelivr.net/gh/skzidev/JLI/index.js"></script>
 ```
 
 ## Usage
@@ -15,7 +15,17 @@ It's simple, just paste in the script tag.
 JLI creates the `window.jli` object, which you can use to interact with it.
 
 ```javascript
+// Run code on command execution
+// This is NOT split for arguments
 window.jli.setCommandCallback((command) => {
-  window.jli.showMessage(command);
+  // Execute Code
+});
+
+// Show a terminal message
+window.jli.showMessage('test');
+
+// Get input from the user (Returns promise)
+window.jli.getInput().then((input) => {
+  // Run code here
 });
 ```
