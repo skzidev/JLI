@@ -1,4 +1,6 @@
-# JLI
+<p align="center"><img src="jli.png"></p>
+
+<h1 align="center">JLI</h1>
 
 JLI is a Web Framework for developing terminal web apps
 
