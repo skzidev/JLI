@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="jli.png">
+    <title>JLI</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@900&display=swap');
+        .header {
+            font-family: 'Unbounded', sans-serif;
+            font-size: 700%;
+            margin-left: 14%;
+            color: white;
+            margin-bottom: 5vh;
+        }
+        body {
+            background: #0a0a0a;
+        }
+        .logo {
+            margin-top: 7vh;
+            margin-left: 10%;
+            margin-right: auto;
+            display: block;
+            width: 20%;
+        }
+        .subheader {
+            font-family: 'Unbounded', sans-serif;
+            color: white;
+        }
+        .demo {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-top: 14vh;
+            margin-right: 10%;
+            border: none;
+            border-radius: 10px;
+            height: 70vh;
+            width: 50%;
+        }
+        .projectSocial {
+            margin-top: 0;
+            margin-left: 16%;
+        }
+        i[class*="fa"] {
+            color: white;
+            font-size: 350%;
+            cursor: pointer;
+        }
+        .fa-solid {
+            margin-left: 5%;
+        }
+    </style>
+    <img src="jli.png" class="logo">
+    <h1 class="header">JLI</h1>
+    <div class="projectSocial">
+        <i class="fa-brands fa-github" title="GitHub" onclick="window.location.href = 'https://github.com/skzidev/JLI';"></i>
+        <i class="fa-solid fa-book-open" title="Docs" onclick="window.location.href = 'docs.html';"></i>
+    </div>
+    <iframe class="demo" src="data:text/html;charset=utf-8,<script src='https://cdn.jsdelivr.net/gh/skzidev/JLI/index.js'></script><script>window.jli.showMessage('JavaScript Interpreter');window.jli.setCommandCallback((command) => { window.jli.showMessage(eval('(' + command + ')')); });</script>"></iframe>
+</body>
+</html>

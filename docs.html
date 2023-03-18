@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="jli.png">
+    <title>JLI Docs</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@900&display=swap');
+        body {
+            background: #0a0a0a;
+        }
+        .logo {
+            margin-top: 5vh;
+            margin-left: 3%;
+            width: 5%;
+            cursor: pointer;
+        }
+        .header {
+            font-family: 'Unbounded';
+            color: white;
+            margin-left: 30%;
+            font-size: 650%;
+        }
+        .content {
+            font-family: 'Rubik';
+            color: white;
+            margin-left: 30%;
+            line-height: 40px;
+        }
+        .link {
+            font-family: 'Rubik';
+            color: #93ccea;
+        }
+        .code {
+            color: white;
+            margin-left: 30%;
+            background: #060606;
+            padding: 20px;
+            width: fit-content;
+            height: fit-content;
+            border-radius: 10px;
+        }
+        .sample {
+            border-radius: 10px;
+            border: none;
+        }
+        .divider {
+            border-top: 1px solid gray;
+            width: 40%;
+            margin-left: 30%;
+        }
+        .subheader {
+            font-family: 'Unbounded';
+            margin-left: 30%;
+            color: white;
+            font-size: 250%;
+        }
+        small {
+            color: gray;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            text-align: center;
+            font-family: 'Rubik';
+        }
+    </style>
+    <img class="logo" src="jli.png" onclick="window.location.href = 'index.html';" title="Home">
+    <h1 class="header">JLI Docs</h1>
+    <p class="content">
+        <a class="link" href="#defs" onclick="scrollToElement('divider')">To skip the tutorial, Click Here</a>
+        <br>
+        JLI is an web framework for creating terminal interfaces, similar to <a class="link" href="https://terminal.jcubic.pl/">jQuery Terminal</a>
+        <br>
+        I'll create a simple JavaScript Interpreter, and show you how to do it along the way.
+        <br><br>
+        First, we need to import JLI into our HTML Document.
+        <br>
+        <pre class="code">&lt;script src='https://cdn.jsdelivr.net/gh/skzidev/JLI/index.js'&gt;&lt;/script&gt;</pre>
+        <br><br>
+    </p>
+    <p class="content">
+        With that, JLI has been brought into the environment, and it should look like this:
+        <br><br>
+        <iframe class="sample" src="data:text/html;charset=utf-8,<script src='https://cdn.jsdelivr.net/gh/skzidev/JLI/index.js'></script>"></iframe>
+        <br>
+        Now it's time to implement our logic using the tools JLI Provides
+        <pre class="code">window.jli.setCommandCallback((command) => {&#13;&#10;&Tab;let result = eval('(' + command + ')');&#13;&#10;&Tab;window.jli.showMessage(result);&#13;&#10;});</pre>
+    </p>
+    <p class="content">
+        Now, it should look like this:
+        <br>
+        <iframe class="sample" src="data:text/html;charset=utf-8,<script src='https://cdn.jsdelivr.net/gh/skzidev/JLI/index.js'></script><script>window.jli.setCommandCallback((command) => { window.jli.showMessage(eval('(' + command + ')')); });</script>"></iframe>
+        <br><br>
+        And with that, You're finished. You've created a simple JavaScript Evaluator using JLI.
+    </p>
+    <div id="divider" class="divider"></div>
+    <h3 class="subheader">Definitions</h3>
+    <p class="content">
+        <pre class="code">window.jli.showMessage(str : Message)</pre>
+    </p>
+    <p class="content">
+        Show a terminal message to the user
+        <br><br>
+        <b>Arguments</b>
+        <br>
+        Message : <code>str</code>
+        <br>
+        The message to show
+        <br><br>
+        <pre class="code">window.jli.getInput()</pre>
+    </p>
+    <p class="content">
+        Gets input from the user via the terminal.
+        <br><br>
+        <b>Returns</b>
+        <br>
+        <code>Promise</code> : Resolves with string of text provided
+        <br><br>
+        <pre class="code">window.jli.setCommandCallback(method : Callback)</pre>
+    </p>
+    <p class="content">
+        Sets the callback to be run when a user submits the input
+        <br><br>
+        <b>Arguments</b>
+        Callback : <code>Method</code>
+        <br>
+        The callback to run on submit
+        <br><br>
+    </p>
+    <small>You've Made it to the end!<br>Happy Coding!</small>
+    <script>
+        function scrollToElement(id){
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
