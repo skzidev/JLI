@@ -32,4 +32,6 @@ window.jli.showMessage('test');
 window.jli.getInput().then((input) => {
   // Run code here
 });
+
+// Remove the previous 
 ```
