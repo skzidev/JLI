@@ -2,6 +2,8 @@
 
 <h1 align="center">JLI</h1>
 
+<p align="center"><a href="https://jli.netlify.app">Website</a> · <a href="https://jli.netlify.app/docs">Docs</a></p>
+
 JLI is a Web Framework for developing terminal web apps
 
 ## Get Started
