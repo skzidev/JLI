@@ -33,5 +33,9 @@ window.jli.getInput().then((input) => {
   // Run code here
 });
 
-// Remove the previous 
+// Remove the previous Message
+window.jli.removePreviousMessage();
+
+// Clear the screen
+window.jli.clearScreen();
 ```
