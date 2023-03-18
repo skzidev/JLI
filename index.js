@@ -46,10 +46,20 @@
             setCommandCallback(callback){
                 this.callback = callback;
             }
-            showMessage(msg){
+            showMessage(msg, color="white"){
                 let txt = document.createElement('p');
                 txt.innerText = msg;
+                txt.style.color = color;
                 document.body.insertBefore(txt, inputText);
+            }
+            removePreviousMessage(){
+                inputText.previousSibling.remove();
+            }
+            clearScreen(){
+                document.querySelectorAll('p').forEach((item) => {
+                    if(item.id == 'in');
+                    else item.remove();
+                });
             }
             getInput(){
                 this.requestingInput = true;
