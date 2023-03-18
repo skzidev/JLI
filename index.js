@@ -21,6 +21,7 @@
                 inputText.innerText = "";
                 if(window.jli.requestingInput){
                     window.jli.promiseResolve(textElem.innerText);
+                    window.jli.requestingInput = false;
                 }
                 else {
                     window.jli.callback(textElem.innerText);
