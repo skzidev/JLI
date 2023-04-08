@@ -31,7 +31,7 @@ const isMobile = {
 
 if(isMobile.any()){
     let input = document.createElement('input');
-    input.style.display = "none";
+    input.style.opacity = "0";
     document.body.appendChild(input);
     input.focus();
     input.addEventListener('keyup',(e) => {
