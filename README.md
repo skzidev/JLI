@@ -4,7 +4,9 @@
 
 <p align="center"><a href="https://jli.netlify.app">Website</a> · <a href="https://jli.netlify.app/docs">Docs</a></p>
 
-JLI is a Web Framework for developing terminal web apps
+<p align="center">JLI is a Web Framework for developing terminal web apps</p>
+
+<p align="center"><b>WARNING: Mobile Support is unimplemented. If you need this to work on mobile, this won't work.</b></p>
 
 ## Get Started
 
