@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - JLI</title>
+    <link rel="icon" href="jli.png">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/gh/skzidev/JLI/index.js"></script>
+    <script>
+        window.jli.showMessage("fatal err (code 404): resource was not found.", 'red');
+        window.jli.showMessage("recommended resouces:");
+        window.jli.setCommandCallback((command) => {
+            window.jli.removePreviousMessage();
+        });
+        let btonStyle = {
+            'background': 'transparent',
+            'color': 'white',
+            'font-family': 'Source Code Pro, monospace',
+            'border': 'none',
+            'cursor': 'pointer',
+            'font-size': '1em'
+        };
+        let home = document.createElement('button');
+        home.onclick = () => { window.location.href = 'index.html'; };
+        home.innerText = "Home";
+        let gh = document.createElement('button');
+        gh.onclick = () => { window.location.href = 'https://github.com/skzidev/JLI'; };
+        gh.innerText = "GitHub";
+        for(var style in btonStyle){
+            home.style.setProperty(style, btonStyle[style]);
+            gh.style.setProperty(style, btonStyle[style]);
+        }
+        home.onmouseenter = gh.onmouseenter = (e) => {
+            e.target.style.textDecoration = "underline";
+        }
+        home.onmouseleave = gh.onmouseleave = (e) => {
+            e.target.style.textDecoration = "none";
+        }
+        document.body.insertBefore(home, inputText);
+        document.body.insertBefore(gh, inputText);
+    </script>
+</body>
+</html>
