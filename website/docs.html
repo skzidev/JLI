@@ -101,7 +101,7 @@
     <div id="divider" class="divider"></div>
     <h3 class="subheader">Definitions</h3>
     <p class="content">
-        <pre class="code">window.jli.showMessage(str : Message)</pre>
+        <pre class="code">window.jli.showMessage(str : Message, str : Color)</pre>
     </p>
     <p class="content">
         Show a terminal message to the user
@@ -111,6 +111,9 @@
         Message : <code>str</code>
         <br>
         The message to show
+        <br>
+        Color : <code>str</code>
+        A CSS Color value representing the color of the text, defaults to white
         <br><br>
         <pre class="code">window.jli.getInput()</pre>
     </p>
@@ -127,12 +130,52 @@
         Sets the callback to be run when a user submits the input
         <br><br>
         <b>Arguments</b>
+        <br>
         Callback : <code>Method</code>
         <br>
         The callback to run on submit
         <br><br>
+        <pre class="code">window.jli.removePreviousMessage()</pre>
     </p>
+    <p class="content">
+        Removes the previous message shown in the terminal
+        <br><br>
+        <pre class="code">window.jli.clearScreen()</pre>
+    </p>
+    <p class="content">
+        Clears the screen of all previous commands
+        <br><br>
+        <pre class="code">window.jli.setCaret(string : Character)</pre>
+    </p>
+    <p class="content">
+        Sets the text character to act as the text caret.
+        <br><br>
+        <b>Arguments</b>
+        <br>
+        Character : <code>Method</code>
+        <br>
+        The character to set the text caret to. Defaults to "_".
+        <br><br>
+        <pre class="code">window.jli.showCursor(boolean : show)</pre>
+    </p>
+    <p class="content">
+        Shows or hides the cursor.
+        <br><br>
+        <b>Arguments</b>
+        <br>
+        Show : <code>Boolean</code>
+        <br>
+        Indicates if the cursor should be shown or hidden.
+        <br>
+        <code>true</code> indicates the cursor should be shown.
+        <br>
+        <code>false</code> indicates the cursor should be hidden.
+        <br>
+        Defaults to <code>false</code>
+    </p>
+    <br><br>
     <small>You've Made it to the end!<br>Happy Coding!</small>
+    <br><br>
     <script>
         function scrollToElement(id){
             document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
