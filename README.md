@@ -18,26 +18,10 @@ It's simple, just paste in the script tag.
 
 ## Usage
 
-JLI creates the `window.jli` object, which you can use to interact with it.
+JLI creates the `window.jli` object, which you can use to interact with the SDK
 
-```javascript
-// Run code on command execution
-// This is NOT split for arguments
-window.jli.setCommandCallback((command) => {
-  // Execute Code
-});
+See the [Docs](https://jli.netlify.app/docs) for more information.
 
-// Show a terminal message
-window.jli.showMessage('test');
+## Demo
 
-// Get input from the user (Returns promise)
-window.jli.getInput().then((input) => {
-  // Run code here
-});
-
-// Remove the previous Message
-window.jli.removePreviousMessage();
-
-// Clear the screen
-window.jli.clearScreen();
-```
+You can test the demo [here](https://jli.netlify.app/demo)
